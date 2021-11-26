@@ -16,14 +16,14 @@ AND "&&" OR "||" XOR "^^" EQ "==" NE "!=" LE "<=" GE ">=" PP "++" MM "--" PE "+=
 
 %%
 {ws}    {/*no action at all*/}
-if      {return(IF);}
-el      {return(ELSE);}
-ret     {return(RETURN);}
-while   {return(WHILE);}
-do      {return(DO);}
-until   {return(UNTIL);}
-decl    {return(FUNDEC);}
-def     {return(VAR);}
+যদি       {return(IF);}
+নাহলে     {return(ELSE);}
+ফেরত     {return(RETURN);}
+যতক্ষণ     {return(WHILE);}
+করো      {return(DO);}
+যতক্ষননা    {return(UNTIL);}
+কার্য      {return(FUNDEC);}
+ধরো      {return(VAR);}
 "&&"    {return(AND);}
 "||"    {return(OR);}
 "^^"    {return(XOR);}
@@ -36,7 +36,7 @@ def     {return(VAR);}
 "+="    {return(PE);}
 "-="    {return(ME);}
 {id}    {return(IDENT);}
-{number}    {return(INTVAL);}
+{number}     {return(INTVAL);}
 {str}   {yylval.stringvalue=yytext;return(STRVAL);}
 .       {return(yytext[0]);}
 
